@@ -1,0 +1,29 @@
+MI LISTA DE LA COMPRA — PWA
+
+CONTENIDO
+- index.html: aplicación.
+- manifest.json: identidad e instalación.
+- service-worker.js: caché para uso sin conexión.
+- icons/: iconos de instalación.
+
+PUBLICACIÓN EN GITHUB PAGES
+1. Crea un repositorio nuevo en GitHub (por ejemplo, mi-lista-compra).
+2. Descomprime este ZIP y sube al directorio raíz del repositorio index.html, manifest.json, service-worker.js y la carpeta icons/.
+   (No es necesario subir este LEEME.txt.)
+3. En Settings > Pages, configura Deploy from a branch, selecciona la rama main y la carpeta /(root), y guarda.
+4. Espera a que GitHub Pages publique el sitio. La dirección tendrá la forma https://TU-USUARIO.github.io/mi-lista-compra/.
+5. Abre esa dirección con Chrome en Android. En el menú ⋮ elige «Instalar aplicación» o «Añadir a pantalla de inicio».
+
+PRIVACIDAD Y DATOS
+- Las listas se guardan localmente en el navegador/perfil del dispositivo mediante localStorage.
+- No hay cuentas, servidor de datos, analítica ni sincronización.
+- Cada dispositivo/perfil de navegador mantiene sus propios datos. En un mismo perfil, la web y la PWA instalada pueden compartir almacenamiento.
+- Exporta periódicamente un JSON desde Configuración para tener una copia de seguridad.
+- La importación reemplaza todas las listas actuales del dispositivo.
+- Esta versión usa la clave local compra_pwa_data_v1 y no importa los datos de las versiones HTML anteriores.
+
+FUNCIONAMIENTO SIN CONEXIÓN
+La primera visita debe hacerse con conexión para descargar la aplicación y registrar el service worker. Después de esa primera carga, la carcasa de la app queda disponible sin conexión. Los datos siguen guardándose localmente.
+
+ACTUALIZACIONES
+Al publicar una nueva versión, cambia el identificador CACHE_NAME en service-worker.js (por ejemplo, mi-compra-pwa-v2) para que los dispositivos descarguen los nuevos archivos.
